@@ -31,6 +31,13 @@ app.use('/api/goals', goalRoutes);
 app.use('/api/export', exportRoutes);
 app.use('/api/backup', backupRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/transactions', transactionRoutes);
+console.log("✅ Transaction routes mounted");
+app.use('/api/stats', statsRoutes);
+console.log("✅ Stats routes mounted");
+
+app.use('/api/budgets', budgetRoutes);
+console.log("✅ Budget routes mounted");
 
 app.get('/api/health', (_req, res) => {
   res.status(200).json({ success: true, message: 'Server is running' });
